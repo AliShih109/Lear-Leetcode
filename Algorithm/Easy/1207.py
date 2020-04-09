@@ -18,15 +18,14 @@ Output: true
 '''
 
 
-class Unique_Number_of_Occurrences:
-public:
-    bool uniqueOccurrences(vector<int>& arr) {
-        
-    }
-};
-
-
-
-
-
-
+class Solution():
+    def Unique_Number_of_Occurrences(self, arr):
+    
+        dict = {} #創建空字典dictionary
+    
+        for val in arr:
+            if val not in dict:
+                dict[val] = 0
+            dict[val] += 1
+                
+        return len(dict.values()) == len(set(dict.values())) #set是一種資料型態: 無序的不重覆序列
