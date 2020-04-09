@@ -19,7 +19,7 @@ Output: true
 
 
 class Solution():
-    def Unique_Number_of_Occurrences(self, arr):
+    def uniqueOccurrences(self, arr):
     
         dict = {} #創建空字典dictionary
     
