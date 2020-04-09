@@ -18,7 +18,8 @@ Output: true
 '''
 
 
-class Solution():
+#Solution1
+class Solution1():
     def uniqueOccurrences(self, arr):
     
         dict = {} #創建空字典dictionary
@@ -28,4 +29,17 @@ class Solution():
                 dict[val] = 0
             dict[val] += 1
                 
-        return len(dict.values()) == len(set(dict.values())) #set是一種資料型態: 無序的不重覆序列
+        return len(dict.values()) == len(set(dict.values())) #set是一種資料型態叫集合
+
+##Python的基本資料型態
+##list[]:序列, tuple(): 序對(宣告後就不可修改), set{}: 集合(無序的不重覆序列), dict{key, value}: 字典
+
+
+#Solution2
+from collections import Counter #計數器，可輸入list, string並返回dict
+
+class Solution2():
+    def uniqueOccurrences(self, arr):
+    
+        dict=Counter(arr)         
+        return len(dict.values()) == len(set(dict.values()))
