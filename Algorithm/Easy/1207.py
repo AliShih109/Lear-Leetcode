@@ -1,8 +1,8 @@
 '''
 1207. Unique Number of Occurrences
 
-Given an array of integers arr, write a function that returns true if and only if the number of occurrences of each value in the array is unique.
-
+Given an array of integers arr, write a function that returns true if and only if the number of occurrences of each value 
+in the array is unique.
 
 Example 1:
 Input: arr = [1,2,2,1,1,3]
@@ -31,8 +31,7 @@ class Solution1():
                 
         return len(dict.values()) == len(set(dict.values())) #set是一種資料型態叫集合
 
-##Python的基本資料型態
-##list[]:序列, tuple(): 序對(宣告後就不可修改), set{}: 集合(無序的不重覆序列), dict{key, value}: 字典
+##Python的基本資料型態   list[]:序列, tuple(): 序對(宣告後就不可修改), set{}: 集合(無序的不重覆序列), dict{key, value}: 字典
 
 
 #Solution2
