@@ -20,7 +20,7 @@ class Solution():
         
         my_dict = {}
         for i in range(len(nums)):
-            if target - nums[i] in my_dict:
+            if target - nums[i] in my_dict: #用dict就只需掃1次而不是2次
                 return [my_dict[target - nums[i]], i]
             else:
-                my_dict[nums[i]] = i #用dict就只需掃1次而不是2次
+                my_dict[nums[i]] = i
