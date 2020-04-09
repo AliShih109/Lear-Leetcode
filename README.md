@@ -1,1 +1,1 @@
-# Lear-Leetcode
+# Learn-Leetcode
