@@ -1,4 +1,6 @@
 '''
+1207. Unique Number of Occurrences
+
 Given an array of integers arr, write a function that returns true if and only if the number of occurrences of each value in the array is unique.
 
 
@@ -14,3 +16,17 @@ Output: false
 Input: arr = [-3,0,1,-3,1,1,1,-3,10,0]
 Output: true
 '''
+
+
+class Unique_Number_of_Occurrences:
+public:
+    bool uniqueOccurrences(vector<int>& arr) {
+        
+    }
+};
+
+
+
+
+
+
