@@ -20,3 +20,56 @@ minStack.top();      --> Returns 0.
 minStack.getMin();   --> Returns -2.
 '''
 
+#Solution1
+class MinStack:
+
+    def __init__(self):
+        self.q = []
+        
+    def push(self, x):
+        if self.q:  #也可以 len(self.q) <> 0
+            self.q.append((x, min(x, self.getMin())))
+        else:
+            self.q.append((x,x))
+
+    def pop(self):
+        if self.q:
+            self.q.pop()
+
+    def top(self):
+        if self.q:
+            return self.q[-1][0]
+
+    def getMin(self):
+        if self.q:
+            return self.q[-1][1]
+    
+
+#Solution2
+class MinStack:
+
+    def __init__(self):
+        self.q = []
+        self.min = []
+        
+    def push(self, x):
+        if self.min:
+            if x < self.min[-1]:
+                self.min.append(x)
+        else:
+            self.min.append(x)
+            
+        self.q.append(x)
+
+    def pop(self):
+        temp = self.q.pop()
+        if temp == self.min[-1]:
+            self.min.pop()
+
+    def top(self):
+        if self.q:
+            return self.q[-1]
+
+    def getMin(self):
+        if self.min:
+            return self.min[-1]
