@@ -23,3 +23,32 @@ Note:
 1. 1 <= stones.length <= 30
 2. 1 <= stones[i] <= 1000
 '''
+
+
+#Solution1
+class Solution:
+    def lastStoneWeight(self, stones):
+        while len(stones) > 1:
+            stones = sorted(stones)
+            y = stones.pop()
+            x = stones.pop()
+            if x != y:
+                stones.append(y-x)
+        
+        return 0 if not stones else stones[0]
+
+
+#Solution2 (利用heap堆疊)
+import heapq
+class Solution:
+    def lastStoneWeight(self, stones):
+        stones = [i * (-1) for i in stones]
+        heapq.heapify(stones)
+        while len(stones) > 1:
+            x = heapq.heappop(stones)
+            if stones:
+                y = heapq.heappop(stones)
+                if x != y:
+                    heapq.heappush(stones, -abs(x-y))
+                    
+        return 0 if not stones else -stones[0]   
